@@ -1,0 +1,140 @@
+	.timepickerWrap {
+		
+		.timepickerInputWrap {
+			float:left;
+			width:100%;
+			position: relative;
+			z-index: 1;
+			background:#fff;
+			cursor: pointer;
+			&:after {
+				content:'\f017';
+				font-family: 'Font Awesome 5 Pro';
+				right: 0px;
+				top:8px;
+				position: absolute;
+				font-size:18px;
+				height: 24px;
+				line-height: 24px;
+				z-index: 1;
+				width: 35px;
+				text-align: center;
+				z-index: 0;
+				color:#{$iconGrey};
+				cursor: pointer;
+			}
+			input {
+				position:relative;
+				z-index: 1;
+				padding: 10px 35px 10px 10px!important;
+				background:transparent;
+				cursor: pointer;
+			}
+		}
+
+
+		.timepicker {
+			position: absolute;
+			top:62px;
+			width:100%;
+			background:#fff;
+			padding:10px;
+			box-sizing: border-box;
+			z-index: 999;
+			display: none;
+
+			.timeLabels {
+				color: #000;
+				font-size: 14px;
+				line-height: 21px;
+				font-weight: bold;
+				width:100%;
+			}
+			.hours, .minutes {
+				float:left;
+				width:50%;
+				>div:not(.ampm):not(.timeLabels) {
+					float:left;
+					text-align:right;
+					padding: 10px 5px;
+					box-sizing: border-box;
+					background: #f5f5f5;
+					color: #666;
+					font-size: 12px;
+					line-height: 15px;
+					cursor: pointer;
+					&:hover {
+						background: #{$blue};
+						color:#fff;
+					}
+					&.j-selected {
+						color: #fff;
+						font-weight: bold;
+						background: #{$blue};
+						box-shadow: inset 0 1px 3px #178fe5;
+					}
+				}
+			}
+			.hours{		
+				clear:both;			
+				>div:nth-child(1n+2) {
+					width: calc(100% / 3);
+				}
+
+			}
+
+			.minutes {
+				>div:nth-child(1n+2) {
+					width: calc(100% / 3);
+				}
+
+			}
+
+			.ampm {
+				width: 50%!important;
+				float:left;
+				>div{
+					width: 50%!important;
+					float:left;
+					padding: 10px 5px;
+					cursor: pointer;
+					box-sizing: border-box;
+					background: #f5f5f5;
+					color: #666;
+					font-size: 12px;
+					line-height: 15px;
+					cursor: pointer;
+					text-align:right;
+					&:hover {
+						background: #{$blue};
+						color:#fff;
+					}
+					&.j-selected {
+						color: #fff;
+						font-weight: bold;
+						background: #{$blue};
+						box-shadow: inset 0 1px 3px #178fe5;
+					}
+				}
+			}
+
+			.minutes {
+				border-left:2px solid #fff;
+				box-sizing: border-box;
+			}
+
+			.set {
+				clear:both;
+				width: 100%;
+				background: #{$blue};
+				color:#fff;
+				text-align:center;
+				cursor: pointer;
+				padding:8px 0;
+				margin-top:2px;
+				float:left;
+				font-size: 12px;
+				font-weight:bold;
+			}
+		}
+	}
